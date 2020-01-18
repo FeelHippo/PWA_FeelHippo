@@ -41,16 +41,11 @@ form.addEventListener('submit', evt => {
     const file = document.querySelector('input[type=file]').files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = async function() {
-        try {
-            card.sheet = await reader.result;            
-                         
-            db.collection('sheet-music').add(card)
-            .catch(err => alert(err));
-        
-        } catch(err) {
-            alert(err)
-        }
+    reader.onload = function() {
+        card.sheet = reader.result;            
+                        
+        db.collection('sheet-music').add(card)
+        .catch(err => alert(err));
     };
     form.title.value = '';
     form.details.value = '';
