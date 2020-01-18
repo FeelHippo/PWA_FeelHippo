@@ -1,0 +1,172 @@
+/* colours */
+:root{
+    --primary: #9bc53d;
+    --secondary: #fde74c;
+    --title: #c3423f;
+  }
+
+  body {
+    height: 100vh;
+    margin: 0%;
+  }
+  
+  /* layout styles */
+  nav{
+    background: var(--primary);
+    border-bottom: 10px solid var(--secondary);
+  }
+  nav a{
+    text-transform: uppercase;
+    color: var(--title);
+  }
+  nav a span{
+    font-weight: bold;
+  }
+  nav .sidenav-trigger{
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  /* repertoire */
+  .charts{
+    margin-top: 10px;
+  }
+  .card-panel.chart{
+    border-radius: 8px;
+    padding: 10px;
+    height: 25vh;
+    
+    overflow:hidden;
+    box-shadow: 0px 1px 3px rgba(90,90,90,0.1);
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-areas: 
+    "image details ."
+    "image details delete"
+    "button button button";
+    position: relative;
+  }
+  .chart img{
+    grid-area: image;
+    max-width: 60px;
+    align-self: center;
+    justify-self: center;
+  }
+  .chart-top{
+    max-height: 40%;
+    grid-area: details;
+    margin-top: 6px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .chart-delete{
+    grid-area: delete;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+  }
+  .chart-delete i{
+    font-size: 3rem;
+  }
+  .chart-title{
+    font-weight: bold;
+  }
+  .chart-details{
+    font-size: 0.8em;
+  }
+
+  .btn{
+    grid-area: button;
+    align-self: center;
+    justify-self: center;
+    width: 30vw;
+    cursor: pointer;
+  }
+  .btn i{
+    font-size: 1.2rem;
+  }
+
+  
+  /* form-styles */
+  .add-btn{
+    background: var(--title) !important;
+  }
+  input{
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
+  .side-form button{
+    background: var(--title);
+    box-shadow: 1px 1px 3px rgba(90,90,90,0.2);
+  }
+  form .input-field{
+    margin-top: 30px;
+  }
+
+  .center {
+    position: sticky;
+    margin-bottom: 1rem;
+  }
+
+  /* fullscreen canvas */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 11; /* Sit on top */
+    left: 0;
+    top: 0;
+    
+
+    width: 100%; /* Full width */
+    height: 100% !important; /* Full height */
+    max-height: 100% !important; /* override Materialize */
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+  canvas {
+    margin: 0 auto;
+    width: 100vw;
+  }
+
+  /* Modal Content (Canvas) */
+  .modal-content {
+    display: inline-block !important;
+    margin: 0 auto;
+    padding: 0px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    overflow: hidden;
+  }
+
+    /* Add Animation - Zoom in the Modal */
+  .modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    color: #FDE74C;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 10;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
